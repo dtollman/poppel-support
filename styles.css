@@ -1,0 +1,91 @@
+:root {
+  color-scheme: dark;
+  --ink: #f7f8ff;
+  --muted: #aab1c8;
+  --gold: #ffd66b;
+  --surface: rgba(255, 255, 255, 0.07);
+  --line: rgba(255, 255, 255, 0.13);
+  --background: #090d19;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--background); }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% -10%, #33497e 0, transparent 38rem),
+    linear-gradient(160deg, #101b37, var(--background) 52%);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+
+a { color: var(--gold); text-underline-offset: 3px; }
+
+.container { width: min(100% - 40px, 760px); margin: 0 auto; }
+
+header { padding: 30px 0 50px; }
+
+.brand {
+  color: var(--ink);
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.hero { padding: 0 0 34px; }
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+h1, h2 { line-height: 1.1; }
+h1 { margin: 0; font-size: clamp(2.5rem, 8vw, 4.5rem); letter-spacing: -0.05em; }
+h2 { margin: 0 0 10px; font-size: 1.25rem; }
+p { color: var(--muted); }
+
+.grid { display: grid; gap: 14px; padding-bottom: 50px; }
+
+.card {
+  padding: 23px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.card p { margin: 0; }
+
+.button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 11px 15px;
+  border-radius: 12px;
+  background: linear-gradient(#ffe28a, #f2af31);
+  color: #1c1503;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.notice { color: var(--gold); font-weight: 700; }
+
+.legal { padding-bottom: 50px; }
+.legal h1 { margin-bottom: 28px; font-size: clamp(2.3rem, 7vw, 3.8rem); }
+.legal h2 { margin-top: 30px; }
+.legal ul { color: var(--muted); padding-left: 22px; }
+
+footer { padding: 24px 0 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+footer nav { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
+
+@media (min-width: 650px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .grid .wide { grid-column: 1 / -1; }
+}
